@@ -1,0 +1,43 @@
+#include <iostream>
+#include <stdlib.h>
+
+using namespace std;
+
+int main()
+{
+    cout<<"Task 19.1 and 19.2 and 19.3: "<<endl;
+   string mes[14]= {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec","Sum","Av" };
+   float zp[14];
+   float  sum=0, AvYear=0;
+   int i,j, r=0;
+
+   printf("     ");
+   for(i=0;i<=13;i++)
+   cout<<mes[i]<<"  ";
+   printf("\n");
+
+
+
+   for(i=1;i<=10;i++){
+    printf("%2d|",i);
+
+   for(j=0;j<12;j++){
+       printf("%5d",r=(rand()% (5000-1000+1) + 1000));
+   sum=sum+r;
+   }
+
+   printf(" ");
+   zp[i]=sum/12;
+   AvYear+=sum;
+   cout<<sum;
+   printf(" ");
+   printf("%.0f",zp[i]);
+   printf("\n");
+   sum=0;
+
+}
+cout<<"Payments per year for the company= "<<AvYear<<endl;//выплаты за год по фирме
+cout<<"Average company salary= "<<AvYear/10/12;//Средняя зарплата по фирме
+
+   return 0;
+}

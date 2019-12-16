@@ -1,0 +1,50 @@
+#include <iostream>
+
+using namespace std;
+
+ int main()
+{
+    float a, a2;
+    struct square{float x,y;};
+    square P[4];
+
+
+    cout<<"Task 6.1: "<<endl;
+    cout<<"Coordinaty 1 tochki kvadrata x, y: ";
+    cin>>P[0].x>>P[0].y;
+    cout<<"Storona kvadrata: ";
+    cin>>a;
+
+    cout<< "Coordinaty tochki vistrela x, y: ";
+    cin>>P[4].x>>P[4].y;
+
+
+
+    if ((((P[4].x<=(P[0].x)+a) and (P[4].x>=P[0].x)) and (P[4].y==P[0].y)) or (((P[4].y<=(P[0].y)+a) and (P[4].y>=P[0].y)) and (P[4].x==P[0].x))){
+        cout<<"Na konture ";
+    }
+    else{
+        if(((P[4].x<=(P[0].x)+a) and (P[4].x>=P[0].x)) or ((P[4].y<=(P[0].y)+a) and (P[4].y>=P[0].y))){cout<<"Vnytri"<<endl;}
+         else {cout<<"Ne vnytri "<<endl;}
+    }
+
+    cout<<"Task 6.2: "<<endl;
+    cout<<"Vvedite koordinati centra okryznostei: "<<endl;
+    cin>>P[0].x>>P[0].y;
+    cout<<"Vvedite radiys vnehnei okryznosti: "<<endl;
+    cin>>a;
+    cout<<"Vvedite radiys vnitrennei okryznosti: "<<endl;
+    cin>>a2;
+    cout<<"Vvedite koordinati tochki: "<<endl;
+    cin>>P[4].x>>P[4].y;
+
+    if((P[4].x>P[0].x+a) || (P[4].y>P[0].y+a2)){cout<<"Za byblikom "<<endl;}
+    else{
+        if(((P[4].x<P[0].x+a2) and (P[4].x>P[0].x-a2)) || ((P[4].y<P[0].y+a2) and (P[4].y>P[0].y-a2))){
+            cout<<"Vnytri byblika "<<endl;}
+        else{cout<<"V byblike "<<endl;}
+    }
+
+    return 0;
+}
+

@@ -1,0 +1,84 @@
+#include <iostream>
+#include <cmath>
+#include <stdio.h>
+#include <math.h>
+
+using namespace std;
+
+
+
+
+
+int main()
+{
+    int x, q;
+
+    cout<<"Task 16.1: "<<endl;
+    cout<<"Vvedite osnovanie system schislenya: "<<endl;
+    cin>>q;
+    cout<<"Vvedite chislo v system schislenya: "<<endl;
+    cin>>x;
+
+        int a=0, y = 0, step = 0;
+        while (x != 0) {
+            a = x%10;
+            if (a >= q) {
+                cout<<"Error"<<endl;
+                  break;
+            }
+            y = y + a * pow(q, step);
+            x = x / 10;
+            step++;
+        }
+        cout<<"Rez (10 system): "<<y<<endl;
+
+
+    cout<<"Task 16.2: "<<endl;
+
+    cout<<"Vvedite output system schislenya: "<<endl;
+    cin>>q;
+    cout<<"Vvedite chislo v 10 system schislenya: "<<endl;
+    cin>>x;
+
+         a=0; y = 0; step = 0;
+        while (x != 0) {
+            a = x % q;
+            x = x / q;
+            y = y + a * pow(10, step);
+            step++;
+        }
+        cout<<"Rez: "<<y<<endl;
+
+      /* cout<<"Task 16.3: "<<endl;
+     float r;
+     cout<<"Vvedite input system schislenya: "<<endl;
+     cin>>q;
+     cout<<"Vvedite output system schislenya: "<<endl;
+     cin>>x;
+     cout<<"Vvedite chislo: "<<endl;
+     cin>>x;
+      a=0, y = 0, step = 0;
+     while (x != 0) {
+         a = x%10;
+         if (a >= q) {
+             cout<<"Error"<<endl;
+               break;
+         }
+         y = y + a * pow(q, step);
+         x = x / 10;
+         step++;
+     }
+     a=0; y = 0; step = 0;
+    while (x != 0) {
+        a = x % q;
+        x = x / q;
+        y = y + a * pow(10, step);
+        step++;
+    }
+    cout<<"Rez: "<<y<<endl;
+*/
+
+
+
+    return 0;
+}

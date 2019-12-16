@@ -1,0 +1,88 @@
+#include <iostream>
+#include <math.h>
+
+using namespace std;
+
+int main()
+{
+
+    cout<<"Task 5.1: "<<endl;
+    float a, b, c, p, s, ha, hb, hc, bisa, bisb, bisc, meda, medb, medc;
+    struct Point{float x,y;};
+    Point P[2];
+    cout<<"Coordinate 1 point-x: ";
+    cin>>P[0].x; //1 точка y
+    cout<<"Coordinate 1 point-y: ";
+    cin>>P[0].y; //1 точка x
+    cout<<"Coordinates 2 point-x: ";
+    cin>>P[1].x; //2 точка x
+    cout<<"Coordinates 2 point-y: ";
+    cin>>P[1].y; //2 точка y
+    cout<<"Coordinates 3 point-x: ";
+    cin>>P[2].x; //3 точка x
+    cout<<"Coordinates 3 point-y: ";
+    cin>>P[2].y; //3 точка y
+
+    a= sqrt(pow(P[1].x-P[0].x,2)+pow(P[1].y-P[0].y,2));//длины сторон треугольника
+    cout<<"Coordinates side 1: ";
+    cout<<a<<endl;
+    b= sqrt(pow(P[2].x-P[0].x,2)+pow(P[2].y-P[0].y,2));
+    cout<<"Coordinates side 2: ";
+    cout<<b<<endl;
+    c= sqrt(pow(P[2].x-P[1].x,2)+pow(P[2].y-P[1].y,2));
+    cout<<"Coordinates side 3: ";
+    cout<<c<<endl;
+
+    p=a+b+c; //периметр
+    s=sqrt((p/2)*(((p/2)-a)*((p/2)-b)*((p/2)-c)));
+    ha=2*s/a;
+    hb=2*s/b;
+    hc=2*s/c;
+
+    cout<<"P= "<<p<<endl;
+    cout<<"S= "<<s<<endl<<endl;
+
+
+
+    cout<<"Task 5.2: "<<endl;
+
+
+    bisa=sqrt(c*b*(c+b+a)*(c+b-a))/(c+b); //биссектриссы
+    bisb=sqrt(a*c*(a+c+b)*(a+c-b))/(a+c);
+    bisc=sqrt(a*b*(a+b+c)*(a+b-c))/(a+b);
+    meda=(sqrt(2*c*c+2*b*b-a*a))/2; //медианы
+    medb=(sqrt(2*a*a+2*c*c-b*b))/2;
+    medc=(sqrt(2*a*a+2*b*b-c*c))/2;
+
+    cout<<"Mediana a= "<<meda<<endl;
+    cout<<"Mediana b= "<<medb<<endl;
+    cout<<"Mediana c= "<<medc<<endl;
+    cout<<"Bisector a= "<<bisa<<endl;
+    cout<<"Bisector b= "<<bisb<<endl;
+    cout<<"Bisector c= "<<bisc<<endl;
+    cout<<"Height to side a= "<<ha<<endl; //высоты
+    cout<<"Height to side b= "<<hb<<endl;
+    cout<<"Height to side c= "<<hc<<endl;
+
+
+    cout<<"Task 5.3: "<<endl;
+    float aRad, bRad, cRad, cosA, cosB, cosC, r, R;
+
+    cosA=(b*b+c*c-a*a)/(2*b*c);//углы
+    aRad=b*b+c*c+2*b*c*cosA;
+    cout<<"a rad= "<<aRad<<endl;
+
+    cosB=(a*a+c*c-b*b)/(2*a*c);
+    bRad=a*a+c*c+2*a*c*cosB;
+    cout<<"b rad= "<<bRad<<endl;
+
+    cRad=(180-aRad)-bRad;
+    cout<<"c rad= "<<cRad<<endl;
+
+    r=sqrt(((p/2-a)*(p/2-b)*(p/2-c))/(p/2));
+    cout<<"r= "<<r<<endl; //радиус вписанной окр
+    R=(a*b*c)/(4*sqrt((p/2)*(((p/2)-a)*((p/2)-b)*((p/2)-c))));
+    cout<<"R= "<<R<<endl;//радиус описанной окр
+
+    return 0;
+}

@@ -1,0 +1,32 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    cout<<"Task 20.1: "<<endl;
+    int g=0, k=16; //гуси и кролики
+    for(g=0;g<=32;g+=2){
+        cout<<"g= "<<g<<" k= "<<k<<endl;
+        k-=1;
+    }
+
+    /*
+
+    cout<<"Task 20.2: "<<endl;
+    int d=0, p=0, des=0, n, i; //2, 5, 10 монет
+    cin>>n;
+
+
+    for(i=0;i<=6;i++){
+    des=n/10;
+    p=des%10;
+    d=p%10;
+
+    cout<<"d= "<<d<<" p= "<<p<<" des= "<<des<<endl;
+
+    }
+    */
+
+    return 0;
+}
